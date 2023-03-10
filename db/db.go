@@ -9,13 +9,8 @@ import (
 
 var Db *gorm.DB
 
-func InitDb(dbName string) *gorm.DB {
-	if dbName == "" {
-		dbName = "asteriskcdrdb"
-	} else {
-		dbName = "asterisk"
-	}
-	Db = connectDB(dbName)
+func InitDb() *gorm.DB {
+	Db = connectDB("asteriskcdrdb")
 	return Db
 }
 
